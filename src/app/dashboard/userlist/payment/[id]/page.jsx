@@ -59,6 +59,7 @@ const page = ({params}) => {
   
     const date = new Date().toDateString();
     const payStatus = "paid";
+    const id= params.id;
     const paySubmit = (e) => {
       e.preventDefault();
       const payment = addPayment.current.value;
@@ -94,6 +95,7 @@ const page = ({params}) => {
         load={load}
         addPayment={addPayment}
         paySubmit={paySubmit}
+        params={params}
       />
     );
 };
