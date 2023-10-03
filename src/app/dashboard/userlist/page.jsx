@@ -5,44 +5,44 @@ import UserRenderData from './UserRenderData';
 import { useQuery } from 'react-query';
 
 const UserList = () => {
-    const [user, setUser] = useState([]);
+    // const [user, setUser] = useState([]);
     const [search, setSearch] = useState("");
 
     const url = `https://asadtelecom.onrender.com/detaCollection`;
 
-  // const {
-  //   data: user = [],
-  //   isLoading,
-  // } = useQuery({
-  //   queryKey: ["detaCollection", ],
-  //   queryFn: async () => {
-  //     const res = await fetch(url);
-  //     const data = await res.json();
-  //     return data;
-  //   },
-  // });
+  const {
+    data: user = [],
+    isLoading,
+  } = useQuery({
+    queryKey: ["detaCollection", ],
+    queryFn: async () => {
+      const res = await fetch(url);
+      const data = await res.json();
+      return data;
+    },
+  });
 
 
 
 
-    useEffect(() => {
-      async function fetchData() {
-        try {
-          const response = await fetch(url);
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
+    // useEffect(() => {
+    //   async function fetchData() {
+    //     try {
+    //       const response = await fetch(url);
+    //       if (!response.ok) {
+    //         throw new Error('Network response was not ok');
+    //       }
   
-          const data = await response.json();
-          setUser(data);
-        } catch (error) {
-          console.error('An error occurred:', error);
-          // Handle the error or set some state to indicate the error to the user
-        }
-      }
+    //       const data = await response.json();
+    //       setUser(data);
+    //     } catch (error) {
+    //       console.error('An error occurred:', error);
+    //       // Handle the error or set some state to indicate the error to the user
+    //     }
+    //   }
   
-      fetchData();
-    }, []);
+    //   fetchData();
+    // }, []);
 
     return (
 <>
