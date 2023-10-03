@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-
+import { FaBeer, FaCalculator, FaEdit, FaEye } from 'react-icons/fa';
 const UserRenderData = ({userData, index}) => {
     const {_id,name,fathersName, parmanentAddress,mobileNumber}= userData;
     return (
@@ -12,8 +12,9 @@ const UserRenderData = ({userData, index}) => {
       <td>{parmanentAddress}</td>
       <td>{mobileNumber}</td>
       <td>
-        <Link className='usersLinks me-2'href={`/dashboard/userlist/view/${_id}`}>Action-1</Link>
-        <Link className='usersLinks' href={`/dashboard/userlist/edit/${_id}`}>action-2</Link>
+        <Link className='usersLinks'href={`/dashboard/userlist/view/${_id}`}><FaEye /></Link>
+        <Link className='usersLinks' href={`/dashboard/userlist/edit/${_id}`}><FaEdit /></Link>
+        <Link className='usersLinks' href={`/dashboard/userlist/payment/${_id}`}><FaCalculator /></Link>
         {/* <Link className='usersLinks ms-2' to={`edit/${_id}`}><i className="fa-solid fa-pen-to-square"></i></Link> */}
       </td>
     </tr>
