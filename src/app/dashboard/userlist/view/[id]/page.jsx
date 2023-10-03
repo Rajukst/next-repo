@@ -2,6 +2,7 @@
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import React, { useEffect, useState } from 'react';
 import PdfData from './PdfData';
+import { Container } from 'react-bootstrap';
 
 const page = ({params}) => {
     const [viewData, setViewData] = useState({});
@@ -39,9 +40,10 @@ const page = ({params}) => {
   console.log(viewData?.image)
     return (
         <>
+        <Container fluid>
         <h4 className="userClass">গ্রাহক ফর্ম:</h4>
         <div className="photos">
-          <img className="img-fluid" style={{height: 150, width: 150}} src={viewData?.image} alt="photos-data" />
+          <img className="img-fluid viewImage"  src={viewData?.image} alt="photos-data" />
         </div>
         <div className="viewNameDiv">
           <div className="">
@@ -229,6 +231,7 @@ const page = ({params}) => {
             )
           }
         </PDFDownloadLink>
+        </Container>
       </>
     );
 };

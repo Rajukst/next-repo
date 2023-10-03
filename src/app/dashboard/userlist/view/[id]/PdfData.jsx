@@ -47,8 +47,8 @@ import {
       // marginVertical: 15,
       // marginHorizontal: 100,
       margin: 4,
-      height: 150,
-      width: 150,
+      height: "150px",
+      width: "150px",
     },
     header: {
       fontSize: 16,

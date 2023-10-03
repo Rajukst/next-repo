@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import UserRenderData from './UserRenderData';
 import { useQuery } from 'react-query';
+import { Container } from 'react-bootstrap';
 const UserList = () => {
     // const [user, setUser] = useState([]);
     const [search, setSearch] = useState("");
@@ -45,10 +46,11 @@ const UserList = () => {
 
     return (
 <>
-        {/* <div className="serarchUser">
+<Container fluid>
+        <div className="serarchUser">
         <div className="serarchInp">
         <div className="dataSearch">
-    <h5 className="pt-1 pe-3">Search User:</h5>
+    <h5 className="">Search User:</h5>
     <input
       className="searchInp"
       type="text"
@@ -60,7 +62,6 @@ const UserList = () => {
   </div>
         </div>
         </div>
-         */}
         <table>
         <thead>
           <tr>
@@ -86,6 +87,7 @@ const UserList = () => {
             ></UserRenderData>
           ))}
       </table>
+      </Container>
         </>
     );
 };

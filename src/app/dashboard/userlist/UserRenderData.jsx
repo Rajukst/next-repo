@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import { FaBeer, FaCalculator, FaEdit, FaEye } from 'react-icons/fa';
 const UserRenderData = ({userData, index}) => {
     const {_id,name,fathersName, parmanentAddress,mobileNumber}= userData;
     return (
+<>
         <tbody>
         <tr>
       <td>{index+1}</td>
@@ -19,6 +21,7 @@ const UserRenderData = ({userData, index}) => {
       </td>
     </tr>
   </tbody>
+  </>
     );
 };
 
